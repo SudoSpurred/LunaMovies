@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <title>LunaMovies</title>
+    <link rel="stylesheet" href="../style.css">
+    <script>
+        const handleSubmit = (e) => {
+            e.preventDefault();
+            let flag = true;
+            for(let i=1; i<=5; i++){
+                if(document.getElementById(`s${i}`).innerHTML !== "☆"){
+                    flag = false;
+                    break;
+                }
+            }
+            if(flag){
+                document.getElementById('message').innerHTML = "<div style=' background-color: rgba(250,153,153,0.27); color: var(--color-fg);" +
+                    "border: 1px solid #800000; padding: 10px 3px 10px 3px; text-align: center'>you can't leave the stars empty, fill at least one</div><br /><br />";
+            }
+            else{
+                const name = document.getElementById('comment_author').value;
+                const email = document.getElementById('email').value;
+                const comment = document.getElementById('comment').value;
+                if(! /^[a-zA-Z\s]*$/.test(name)){
+                    document.getElementById('message').innerHTML = "<div style=' background-color: rgba(250,153,153,0.27); color: var(--color-fg);" +
+                        "border: 1px solid #800000; padding: 10px 3px 10px 3px; text-align: center'>only space and alphabets are allowed in name</div><br /><br />";
+                }
+                else if(name.length < 3){
+                    document.getElementById('message').innerHTML = "<div style=' background-color: rgba(250,153,153,0.27); color: var(--color-fg);" +
+                        "border: 1px solid #800000; padding: 10px 3px 10px 3px; text-align: center'>length of the name should be at least 3 characters</div><br /><br />";
+                }
+                else if(! /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+                    document.getElementById('message').innerHTML = "<div style=' background-color: rgba(250,153,153,0.27); color: var(--color-fg);" +
+                        "border: 1px solid #800000; padding: 10px 3px 10px 3px; text-align: center'>email format is not correct</div><br /><br />";
+                }
+                else if(comment.length < 10){
+                    document.getElementById('message').innerHTML = "<div style=' background-color: rgba(250,153,153,0.27); color: var(--color-fg);" +
+                        "border: 1px solid #800000; padding: 10px 3px 10px 3px; text-align: center'>comment should be at least 10 character long</div><br /><br />";
+                }
+                else{
+                    document.getElementById('message').innerHTML = "<div style=' background-color: rgba(153,250,158,0.27); color: var(--color-fg);" +
+                        "border: 1px solid green; padding: 10px 3px 10px 3px; text-align: center'>comment has been sent to server for review</div><br /><br />";
+                }
+            }
+        }
+        const star = (s) => {
+            for(let i=1; i<=s; i++){
+                document.getElementById(`s${i}`).innerHTML = "&#9734;"
+            }
+            for(let i=s; i<=5; i++){
+                document.getElementById(`s${i}`).innerHTML = "&#9733;"
+            }
+        }
+    </script>
+</head>
+<body>
+
+
+<div class="wrapper">
+    <header>
+        <div>
+            <a href="../index.html"><img src="../resources/Youtube_logo.png" class="headerLogo" alt="logo" />
+                <sup style="font-size: 26px;"> LunaMovies </sup></a>
+        </div>
+        <a data-theme-toggle aria-label="toggle theme"></a>
+        <a class="btn" href="../index.html" style="width: 85px;margin-top: 0">home page</a>
+        <div class="search-container"><a href="../search.html">
+            <input type="text" placeholder="Search..." class="SearchBox">
+            <a href="../search.html"><img src="../resources/Search.png" alt="search logo" class="SearchBtn" /></a></a>
+        </div>
+    </header>
+
+    <div class="main-content" style="margin-left: 3px;">
+        <aside class="left-sidebar">
+            <h3 style="color: blueviolet">Most Starred Movies</h3>
+            <ul class="listItems">
+                <li><a href="400.html">John Wick 3</a></li>
+                <li><a href="400.html">Avengers: Endgame</a></li>
+                <li><a href="400.html">The Shawshank Redemption</a></li>
+                <li><a href="400.html">The Godfather</a></li>
+                <li><a href="400.html">The Dark Knight</a></li>
+                <li><a href="400.html">Inception</a></li>
+                <li><a href="400.html">Pulp Fiction</a></li>
+                <li><a href="400.html">Forrest Gump</a></li>
+                <li><a href="400.html">Fight Club</a></li>
+                <li><a href="400.html">The Matrix</a></li>
+                <li><a href="400.html">Schindler's List</a></li>
+                <li><a href="400.html">The Silence of the Lambs</a></li>
+                <li><a href="400.html">The Departed</a></li>
+                <li><a href="400.html">The Green Mile</a></li>
+            </ul>
+            <br />
+            <h3 style="color: blueviolet">Most Commented Movies</h3>
+            <ul class="listItems">
+                <li><a href="400.html">John Wick 3</a></li>
+                <li><a href="400.html">Avengers: Endgame</a></li>
+                <li><a href="400.html">The Shawshank Redemption</a></li>
+                <li><a href="400.html">The Godfather</a></li>
+                <li><a href="400.html">The Dark Knight</a></li>
+                <li><a href="400.html">Inception</a></li>
+                <li><a href="400.html">Pulp Fiction</a></li>
+                <li><a href="400.html">Forrest Gump</a></li>
+                <li><a href="400.html">Fight Club</a></li>
+                <li><a href="400.html">The Matrix</a></li>
+                <li><a href="400.html">Schindler's List</a></li>
+                <li><a href="400.html">The Silence of the Lambs</a></li>
+                <li><a href="400.html">The Departed</a></li>
+                <li><a href="400.html">The Green Mile</a></li>
+            </ul>
+            <br />
+            <h3 style="color: blueviolet">Newest Movies</h3>
+            <ul class="listItems">
+                <li><a href="400.html">Inception</a></li>
+                <li><a href="400.html">The Dark Knight</a></li>
+                <li><a href="400.html">The Matrix</a></li>
+                <li><a href="400.html">Pulp Fiction</a></li>
+                <li><a href="400.html">Forrest Gump</a></li>
+                <li><a href="400.html">Fight Club</a></li>
+                <li><a href="400.html">The Godfather</a></li>
+                <li><a href="400.html">Schindler's List</a></li>
+                <li><a href="400.html">The Silence of the Lambs</a></li>
+                <li><a href="400.html">The Dark Knight Rises</a></li>
+                <li><a href="400.html">The Lord of the Rings</a></li>
+                <li><a href="400.html">The Godfather: Part II</a></li>
+                <li><a href="400.html">Forrest Gump</a></li>
+                <li><a href="400.html">The Shawshank Redemption</a></li>
+            </ul>
+        </aside>
+
+        <section class="main-section">
+            <div class="container2">
+                <div class="card2">
+                    <div class="image2">
+                        <img src="../resources/Equalizer2.jpg" alt="Image">
+                    </div>
+                    <div class="details2">
+                        <h1>Equalizer2</h1>
+                        <div class="rating">
+                            <span class="stars">
+                                <span class="star">&#9733;</span>
+                                <span class="star">&#9733;</span>
+                                <span class="star">&#9733;</span>
+                                <span class="star">&#9733;</span>
+                                <span class="star">&#9734;</span>
+                            </span>
+                        </div>
+                        <p style="margin-bottom: 0; margin-top: 5px;">
+                            After gunning down a member of the High Table legendary hit man John Wick finds himself stripped of the organization's protective services. Now stuck with a $14 million bounty on his head, Wick must fight his way through the streets of New York as he becomes the target of the world's most ruthless killers.
+                        </p>
+                        <br />
+                        <hr style="margin-bottom: 12px; color: var(--color-fg)"/>
+                        <iframe src="https://www.imdb.com/video/embed/vi3203841305/?autoplay=false&width=560&height=315"></iframe>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <br />
+            <div class="comment-section">
+                <div class="comments">
+                    <div class="comment">
+                        <div class="avatar">
+                            <img src="../resources/user.jpg" alt="User Avatar">
+                        </div>
+                        <div class="comment-body">
+                            <div class="comment-info">
+                                <span class="username">John Doe <span class="rating2 stars">
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9734;</span>
+                                    </span></span>
+                                <span class="timestamp">2 hours ago</span>
+                            </div>
+                            <p class="comment-text">This is a great movie! Keep it up!</p>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <div class="avatar">
+                            <img src="../resources/user.jpg" alt="User Avatar">
+                        </div>
+                        <div class="comment-body">
+                            <div class="comment-info">
+                                <span class="username">Samanta Smith <span class="rating2 stars">
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9734;</span>
+                                        <span class="star">&#9734;</span>
+                                    </span></span>
+                                <span class="timestamp">6 hours ago</span>
+                            </div>
+                            <p class="comment-text">almost a masterpiece!</p>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <div class="avatar">
+                            <img src="../resources/user.jpg" alt="User Avatar">
+                        </div>
+                        <div class="comment-body">
+                            <div class="comment-info">
+                                <span class="username">Lana Dark <span class="rating2 stars">
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                    </span></span>
+                                <span class="timestamp">8 hours ago</span>
+                            </div>
+                            <p class="comment-text">its a good movie, great scenes, keep it up!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="respond">
+                <h3>Leave a Comment</h3>
+                <fieldset style="padding: 10px; border-radius: 1%;" onsubmit="handleSubmit(event)">
+                    <div id="message">
+
+                    </div>
+                    <form id="commentform">
+                        <label for="starsCom">Stars</label><br />
+                        <span id="starsCom" class="rating2" dir="rtl">
+                            <a class="star" id="s1" onclick="star(1)">&#9734;</a>
+                            <a class="star" id="s2" onclick="star(2)">&#9734;</a>
+                            <a class="star" id="s3" onclick="star(3)">&#9734;</a>
+                            <a class="star" id="s4" onclick="star(4)">&#9734;</a>
+                            <a class="star" id="s5" onclick="star(5)">&#9734;</a>
+                        </span><br /><br />
+                        <label for="comment_author" class="required">Your name</label>
+                        <input type="text" name="comment_author" id="comment_author" value="" required="required">
+                        <label for="email" class="required">Your email</label>
+                        <input type="email" name="email" id="email" value="" required="required">
+                        <label for="comment" class="required">Your message</label>
+                        <textarea name="comment" id="comment" rows="10" tabindex="4"></textarea>
+                        <button class="btn" style="width: 78px; padding: 0">comment</button>
+                    </form>
+                </fieldset>
+                <br/>
+            </div>
+        </section>
+
+        <aside class="right-sidebar">
+            <div class="option-box">
+                <h2>Movies</h2>
+                <hr style="max-width: 95%;"/>
+                <h3>Action</h3>
+                <ul class="listItems">
+                    <li><a href="400.html">John Wick 3</a></li>
+                    <li><a href="400.html">Mad Max: Fury Road</a></li>
+                    <li><a href="400.html">Die Hard</a></li>
+                    <li><a href="400.html">The Avengers</a></li>
+                    <li><a href="400.html">The Dark Knight Rises</a></li>
+                    <li><a href="400.html">Gladiator</a></li>
+                    <li><a href="400.html">Kill Bill: Vol. 1</a></li>
+                    <li><a href="400.html">The Matrix</a></li>
+                </ul>
+                <h3>Comedy</h3>
+                <ul class="listItems">
+                    <li><a href="400.html">The Hangover</a></li>
+                    <li><a href="400.html">Superbad</a></li>
+                    <li><a href="400.html">Bridesmaids</a></li>
+                    <li><a href="400.html">Dumb and Dumber</a></li>
+                    <li><a href="400.html">Pineapple Express</a></li>
+                    <li><a href="400.html">Shaun of the Dead</a></li>
+                    <li><a href="400.html">Napoleon Dynamite</a></li>
+                </ul>
+                <h3>Drama</h3>
+                <ul class="listItems">
+                    <li><a href="400.html">Good Will Hunting</a></li>
+                    <li><a href="400.html">The Departed</a></li>
+                    <li><a href="400.html">A Beautiful Mind</a></li>
+                    <li><a href="400.html">The Social Network</a></li>
+                    <li><a href="400.html">Requiem for a Dream</a></li>
+                    <li><a href="400.html">12 Years a Slave</a></li>
+                </ul>
+                <h3>Horror</h3>
+                <ul class="listItems">
+                    <li><a href="400.html">The Shining</a></li>
+                    <li><a href="400.html">Get Out</a></li>
+                    <li><a href="400.html">The Exorcist</a></li>
+                    <li><a href="400.html">Hereditary</a></li>
+                    <li><a href="400.html">The Conjuring</a></li>
+                    <li><a href="400.html">Psycho</a></li>
+                    <li><a href="400.html">It Follows</a></li>
+                    <li><a href="400.html">The Babadook</a></li>
+                </ul>
+                <h3>Sci-Fi</h3>
+                <ul class="listItems">
+                    <li><a href="400.html">Blade Runner 2049</a></li>
+                    <li><a href="400.html">The Martian</a></li>
+                    <li><a href="400.html">Interstellar</a></li>
+                    <li><a href="400.html">Avatar</a></li>
+                    <li><a href="400.html">Arrival</a></li>
+                    <li><a href="400.html">Minority Report</a></li>
+                    <li><a href="400.html">District 9</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <footer style="padding-top: 3px">
+        <div style="float: left">
+            ® LunaMovies Iran, website. All rights reserved.
+        </div>
+        <div style="float: right; margin-right: 10px; border: 1px solid var(--color-fg); padding: 2px" >
+            <span id="date"></span>
+            &nbsp;
+            |
+            &nbsp;
+            <span id="clock"></span>
+        </div>
+    </footer>
+</div>
+<script src="../clock.js"></script>
+<script src="../theme.js"></script>
+</body>
+</html>

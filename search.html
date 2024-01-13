@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <title>LunaMovies</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        const handleSubmit = (e) => {
+            e.preventDefault();
+            if(document.getElementById('name').value || document.getElementById('genre').value || document.getElementById('director').value || document.getElementById('origin').value || document.getElementById('year').value) {
+                if (document.getElementById('name').value.length < 2 && document.getElementById('name').value) {
+                    document.getElementById('message').innerHTML = "<div style='max-width: 280px; background-color: rgba(250,153,153,0.27); color: var(--color-fg);" +
+                        "border: 1px solid #800000; padding: 10px 3px 10px 3px; text-align: center'>name's text is not a valid input</div>";
+                } else if (document.getElementById('genre').value && document.getElementById('genre').value.length < 2) {
+                    document.getElementById('message').innerHTML = "<div style='max-width: 280px; background-color: rgba(250,153,153,0.27); color: var(--color-fg);" +
+                        "border: 1px solid #800000; padding: 10px 3px 10px 3px; text-align: center'>genre's text is not a valid input</div>";
+                } else if (document.getElementById('director').value && document.getElementById('director').value.length < 2) {
+                    document.getElementById('message').innerHTML = "<div style='max-width: 280px; background-color: rgba(250,153,153,0.27); color: var(--color-fg);" +
+                        "border: 1px solid #800000; padding: 10px 3px 10px 3px; text-align: center'>director's text is not a valid input</div>";
+                } else if (document.getElementById('origin').value && document.getElementById('origin').value.length < 2) {
+                    document.getElementById('message').innerHTML = "<div style='max-width: 280px; background-color: rgba(250,153,153,0.27); color: var(--color-fg);" +
+                        "border: 1px solid #800000; padding: 10px 3px 10px 3px; text-align: center'>origin's text is not a valid input</div>";
+                } else if (!document.getElementById('year').value) {
+                    document.getElementById('message').innerHTML = "<div style='max-width: 280px; background-color: rgba(250,153,153,0.27); color: var(--color-fg);" +
+                        "border: 1px solid #800000; padding: 10px 3px 10px 3px; text-align: center'>year's text is not a valid input</div>";
+                } else {
+                    document.getElementById('message').innerHTML = "<div style='max-width: 280px; background-color: rgba(153,250,158,0.27); color: var(--color-fg);" +
+                        "border: 1px solid green; padding: 10px 3px 10px 3px; text-align: center'>parameters are sent to server for a search</div>";
+                }
+            }
+            else{
+                document.getElementById('message').innerHTML = "<div style='max-width: 280px; background-color: rgba(250,153,153,0.27); color: var(--color-fg);" +
+                    "border: 1px solid #800000; padding: 10px 3px 10px 3px; text-align: center'>fill at least one of the boxes</div>";
+            }
+        }
+    </script>
+</head>
+<body>
+
+
+<div class="wrapper">
+    <header>
+        <div>
+            <a href="index.html"><img src="resources/Youtube_logo.png" class="headerLogo" alt="logo" />
+                <sup style="font-size: 26px;"> LunaMovies </sup></a>
+        </div>
+        <a data-theme-toggle aria-label="toggle theme"></a>
+        <a class="btn" href="index.html" style="width: 85px;margin-top: 0">home page</a>
+        <div class="search-container"><a href="search.html">
+            <input type="text" placeholder="Search..." class="SearchBox">
+            <a href="search.html"><img src="resources/Search.png" alt="search logo" class="SearchBtn" /></a></a>
+        </div>
+    </header>
+
+    <div class="main-content" style="margin-left: 3px;">
+        <aside class="left-sidebar">
+            <h3 style="color: blueviolet">Most Starred Movies</h3>
+            <ul class="listItems">
+                <li><a href="movies/400.html">John Wick 3</a></li>
+                <li><a href="movies/400.html">Avengers: Endgame</a></li>
+                <li><a href="movies/400.html">The Shawshank Redemption</a></li>
+                <li><a href="movies/400.html">The Godfather</a></li>
+                <li><a href="movies/400.html">The Dark Knight</a></li>
+                <li><a href="movies/400.html">Inception</a></li>
+                <li><a href="movies/400.html">Pulp Fiction</a></li>
+                <li><a href="movies/400.html">Forrest Gump</a></li>
+                <li><a href="movies/400.html">Fight Club</a></li>
+                <li><a href="movies/400.html">The Matrix</a></li>
+                <li><a href="movies/400.html">Schindler's List</a></li>
+                <li><a href="movies/400.html">The Silence of the Lambs</a></li>
+                <li><a href="movies/400.html">The Departed</a></li>
+                <li><a href="movies/400.html">The Green Mile</a></li>
+            </ul>
+            <br />
+            <h3 style="color: blueviolet">Most Commented Movies</h3>
+            <ul class="listItems">
+                <li><a href="movies/400.html">John Wick 3</a></li>
+                <li><a href="movies/400.html">Avengers: Endgame</a></li>
+                <li><a href="movies/400.html">The Shawshank Redemption</a></li>
+                <li><a href="movies/400.html">The Godfather</a></li>
+                <li><a href="movies/400.html">The Dark Knight</a></li>
+                <li><a href="movies/400.html">Inception</a></li>
+                <li><a href="movies/400.html">Pulp Fiction</a></li>
+                <li><a href="movies/400.html">Forrest Gump</a></li>
+                <li><a href="movies/400.html">Fight Club</a></li>
+                <li><a href="movies/400.html">The Matrix</a></li>
+                <li><a href="movies/400.html">Schindler's List</a></li>
+                <li><a href="movies/400.html">The Silence of the Lambs</a></li>
+                <li><a href="movies/400.html">The Departed</a></li>
+                <li><a href="movies/400.html">The Green Mile</a></li>
+            </ul>
+            <br />
+            <h3 style="color: blueviolet">Newest Movies</h3>
+            <ul class="listItems">
+                <li><a href="movies/400.html">Inception</a></li>
+                <li><a href="movies/400.html">The Dark Knight</a></li>
+                <li><a href="movies/400.html">The Matrix</a></li>
+                <li><a href="movies/400.html">Pulp Fiction</a></li>
+                <li><a href="movies/400.html">Forrest Gump</a></li>
+                <li><a href="movies/400.html">Fight Club</a></li>
+                <li><a href="movies/400.html">The Godfather</a></li>
+                <li><a href="movies/400.html">Schindler's List</a></li>
+                <li><a href="movies/400.html">The Silence of the Lambs</a></li>
+                <li><a href="movies/400.html">The Dark Knight Rises</a></li>
+                <li><a href="movies/400.html">The Lord of the Rings</a></li>
+                <li><a href="movies/400.html">The Godfather: Part II</a></li>
+                <li><a href="movies/400.html">Forrest Gump</a></li>
+                <li><a href="movies/400.html">The Shawshank Redemption</a></li>
+            </ul>
+        </aside>
+
+        <section class="main-section">
+            <fieldset>
+                <legend>Search Parameters</legend>
+                    <br /><br />
+                <form class="formBox" onsubmit="handleSubmit(event)">
+                    <label> Movie Name <br /><input id="name" type="text" name="movie" placeholder="Movie Name" class="formBoxDesign" /></label>
+                    <br /><br />
+                    <label> Movie Genre <br /><input id="genre" type="text" name="genre" placeholder="Movie Genre" class="formBoxDesign" /></label>
+                    <br /><br />
+                    <label> Movie Director <br /><input id="director" type="text" name="director" placeholder="Movie Director" class="formBoxDesign" /></label>
+                    <br /><br />
+                    <label> Movie Year <br /><input id="year" min="1900" max="2025" type="number" name="year" placeholder="Movie Year" class="formBoxDesign"/></label>
+                    <br /><br />
+                    <label> Movie Origin <br /><input id="origin" type="text" name="origin" placeholder="Movie Origin" class="formBoxDesign" /></label>
+                    <br /><br />
+                    <button style="padding: 0" type="submit" class="btn">Search</button>
+                    <br /><br />
+                    <div id="message">
+                        <br /><br />
+                    </div>
+                </form>
+            </fieldset>
+
+        </section>
+
+        <aside class="right-sidebar">
+            <div class="option-box">
+                <h2>Movies</h2>
+                <hr style="max-width: 95%;"/>
+                <h3>Action</h3>
+                <ul class="listItems">
+                    <li><a href="movies/400.html">John Wick 3</a></li>
+                    <li><a href="movies/400.html">Mad Max: Fury Road</a></li>
+                    <li><a href="movies/400.html">Die Hard</a></li>
+                    <li><a href="movies/400.html">The Avengers</a></li>
+                    <li><a href="movies/400.html">The Dark Knight Rises</a></li>
+                    <li><a href="movies/400.html">Gladiator</a></li>
+                    <li><a href="movies/400.html">Kill Bill: Vol. 1</a></li>
+                    <li><a href="movies/400.html">The Matrix</a></li>
+                </ul>
+                <h3>Comedy</h3>
+                <ul class="listItems">
+                    <li><a href="movies/400.html">The Hangover</a></li>
+                    <li><a href="movies/400.html">Superbad</a></li>
+                    <li><a href="movies/400.html">Bridesmaids</a></li>
+                    <li><a href="movies/400.html">Dumb and Dumber</a></li>
+                    <li><a href="movies/400.html">Pineapple Express</a></li>
+                    <li><a href="movies/400.html">Shaun of the Dead</a></li>
+                    <li><a href="movies/400.html">Napoleon Dynamite</a></li>
+                </ul>
+                <h3>Drama</h3>
+                <ul class="listItems">
+                    <li><a href="movies/400.html">Good Will Hunting</a></li>
+                    <li><a href="movies/400.html">The Departed</a></li>
+                    <li><a href="movies/400.html">A Beautiful Mind</a></li>
+                    <li><a href="movies/400.html">The Social Network</a></li>
+                    <li><a href="movies/400.html">Requiem for a Dream</a></li>
+                    <li><a href="movies/400.html">12 Years a Slave</a></li>
+                </ul>
+                <h3>Horror</h3>
+                <ul class="listItems">
+                    <li><a href="movies/400.html">The Shining</a></li>
+                    <li><a href="movies/400.html">Get Out</a></li>
+                    <li><a href="movies/400.html">The Exorcist</a></li>
+                    <li><a href="movies/400.html">Hereditary</a></li>
+                    <li><a href="movies/400.html">The Conjuring</a></li>
+                    <li><a href="movies/400.html">Psycho</a></li>
+                    <li><a href="movies/400.html">It Follows</a></li>
+                    <li><a href="movies/400.html">The Babadook</a></li>
+                </ul>
+                <h3>Sci-Fi</h3>
+                <ul class="listItems">
+                    <li><a href="movies/400.html">Blade Runner 2049</a></li>
+                    <li><a href="movies/400.html">The Martian</a></li>
+                    <li><a href="movies/400.html">Interstellar</a></li>
+                    <li><a href="movies/400.html">Avatar</a></li>
+                    <li><a href="movies/400.html">Arrival</a></li>
+                    <li><a href="movies/400.html">Minority Report</a></li>
+                    <li><a href="movies/400.html">District 9</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <footer style="padding-top: 3px">
+        <div style="float: left">
+            ® LunaMovies Iran, website. All rights reserved.
+        </div>
+        <div style="float: right; margin-right: 10px; border: 1px solid var(--color-fg); padding: 2px" >
+            <span id="date"></span>
+            &nbsp;
+            |
+            &nbsp;
+            <span id="clock"></span>
+        </div>
+    </footer>
+</div>
+<script src="clock.js"></script>
+<script src="theme.js"></script>
+</body>
+</html>
